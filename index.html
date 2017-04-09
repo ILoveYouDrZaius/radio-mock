@@ -5,6 +5,8 @@
     <title>WebRadio</title>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="rangeslider.js-2.3.0/rangeslider.css" >
+    <link rel="stylesheet" href="chat.css">
   </head>
   <body>
     <!-- <ul id="navbar" class="navbar-collapse">
@@ -28,8 +30,13 @@
         <!-- <h1>Jumbotron heading</h1> -->
         <!-- <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
-        <audio id="audioplayer" src="http://fm101.uz:9900/fm101_high" autoplay> </audio>
-        <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+        <audio id="audioplayer" src="http://stream.radioreklama.bg:80/radio1rock.ogg" autoplay> </audio>
+        <!-- <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input> -->
+        <!-- <label for="volumen">Volumen: </label><input type="text" id="volumen" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="100" data-slider-orientation="vertical"> -->
+        <!-- <input type="checkbox" id="mute"><label for="mute">Mute</label> -->
+        <input id="volumen" type="range" data-orientation="vertical" value="100">
+        <output></output>
+
 
       </div>
 
@@ -62,18 +69,27 @@
       </footer>
 
     </div>
-  <script src="APlayer.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script src="rangeslider.js-2.3.0/rangeslider.min.js"></script>
+    <script type="text/javascript">
+      var $element = $('input[type="range"]');
+      var $output = $('output');
 
-  <script type="text/javascript">
-  window.SetVolume = function(val){
-    var player = document.getElementById('audioplayer');
-    console.log('Before: ' + player.volume);
-    player.volume = val / 100;
-    console.log('After: ' + player.volume);
-  }
+      function updateOutput(el, val) {
+        el.textContent = val;
+        var v = document.getElementById("audioplayer");
+        v.volume = val/100;
+      }
 
-  </script>
-
-
+      $element
+      .rangeslider({
+        polyfill: false,
+        onInit: function() {
+          updateOutput($output[0], this.value);
+        }
+      })
+      .on('input', function() {
+        updateOutput($output[0], this.value);
+      });
+    </script>
   </body>
-</html>
