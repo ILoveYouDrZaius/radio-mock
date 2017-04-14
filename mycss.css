@@ -1,0 +1,25 @@
+#radio-player{
+  background-color: #02779E;
+}
+
+#radio-player h1{
+  color: white;
+}
+
+.rangeslider {
+  background-color: #fff;
+  /*border-radius: 0;
+  height: 0.2rem;*/
+}
+
+.rangeslider__fill {
+  background-color: #F01F14;
+  /*border-radius: 0;*/
+}
+
+#progressbar{
+  margin-top: 10px;
+  /*margin: 20px;*/
+  /*width: 400px;*/
+  height: 8px;
+}
