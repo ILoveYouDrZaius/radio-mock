@@ -36,46 +36,56 @@
 
     <audio id="audioplayer" src="http://stream.radioreklama.bg:80/radio1rock.ogg" autoplay> </audio>
 
-    <div class="container">
-      <div class="jumbotron">
-        <div class="row">
-          <div class="col-sm-2">
-            <img src="https://f4.bcbits.com/img/a4244997660_10.jpg" class="img-fluid">
+    <div class="container" style="padding-top: 40px;">
+      <div class="row">
+        <div class="col">
+          <img src="https://f4.bcbits.com/img/a4244997660_10.jpg" class="img-fluid">
+        </div>
+        <div class="col-sm-8">
+          <div class="row">
+            <h1>Avulsed - Daddy Stew</h1>
           </div>
-          <div class="col-sm-8">
-            <div class="row">
-              <h1>Avulsed - Daddy Stew</h1>
-            </div>
-            <div class="row">
-              <div id="progressbar"></div>
+          <div class="row">
+            <div id="progressbar"></div>
+          </div>
+          <div class="row center">
+            <div class="center" style="float: none; margin: 0 auto;">
+              1:43 / 3:54
             </div>
           </div>
-          <div class="col-sm-1">
-            <div class="row">
-              <input id="volumen" type="range" data-orientation="vertical" value="0">
-              <output></output>
-            </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <input id="volumen" type="range" data-orientation="vertical" value="0">
+            <output></output>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="jumbotron">
-        <div class="row">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary btn-lg">
-              <input type="radio" name="options">Cannibal Corpse - Hammer Smashed Face
+    <div class="container" style="padding-top: 40px;">
+      <div class="row">
+        <h5>Vota por la próxima canción...</h5>
+      </div>
+      <div class="row" style="padding-top: 10px;">
+        <div class="col text-center">
+          <div class="btn-group-vertical center" data-toggle="buttons">
+            <label class="btn btn-primary btn-lg btn-block">
+              <input type="radio" name="options" id="option1" autocomplete="off">Avulsed - Cadáver decapitado</button>
             </label>
-            <label class="btn btn-primary btn-lg">
-              <input type="radio" name="options">At The Gates - Cold
+            <label class="btn btn-primary btn-lg btn-block">
+              <input type="radio" name="options" id="option2" autocomplete="off">Cannibal Corpse - Hammer Smashed Face</button>
             </label>
-            <label class="btn btn-primary btn-lg">
-              <input type="radio" name="options">The Black Dahlia Murder - Eleven
+            <label class="btn btn-primary btn-lg btn-block">
+              <input type="radio" name="options" id="option3" autocomplete="off">At the gates - Cold</button>
             </label>
           </div>
         </div>
       </div>
     </div>
+    <div class="container" style="padding-top: 40px;">
+
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="bootstrap/js/tether.min.js"></script>
 
