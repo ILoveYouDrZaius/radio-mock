@@ -87,7 +87,7 @@
       <div class="row">
         <h1>Chat</h1>
       </div>
-        <div class="chat" style="overflow-y:scroll; overflow-x: hidden; max-height:250px; text-align: justify; padding-top:25px;">
+        <div class="chat-box" id="chat-box" style="overflow-y:scroll; overflow-x: hidden; max-height:250px; text-align: justify; padding-top:25px;">
           <div class="row">
             <div class="col-sm-2">
               Manolo
@@ -276,6 +276,9 @@
     <script type="text/javascript">
       var $element = $('input[type="range"]');
       var $output = $('output');
+
+			var objDiv = document.getElementById("chat-box");
+			objDiv.scrollTop = objDiv.scrollHeight;
 
       function updateOutput(el, val) {
         // el.textContent = val;
